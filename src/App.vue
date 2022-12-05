@@ -3,9 +3,15 @@ import { ref } from "vue";
 
 const personsList = ref([]);
 const fashionablePerson = ref("");
+const number = ref(0);
 const addPerson = () => {
   if (fashionablePerson.value === "") return;
-  personsList.value.push(fashionablePerson.value);
+  let personInfo = {
+    person: fashionablePerson.value,
+    count: number.value
+  }
+  number.value++;
+  personsList.value.push(personInfo);
   fashionablePerson.value = "";
 };
 </script>
@@ -24,8 +30,7 @@ const addPerson = () => {
   <div class="container">
     <ul>
       <li v-for="person in personsList">
-        <p>{{ person }}</p>
-        <span></span>
+        <p>{{ person.person }}: {{ person.count }}</p>
       </li>
     </ul>
   </div>
@@ -56,6 +61,6 @@ li {
   border-radius: 4px;
   color: black;
   list-style: none;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 </style>
