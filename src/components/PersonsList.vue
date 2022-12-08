@@ -1,7 +1,9 @@
 <script setup>
 import { useStore } from "../store/personsList"
+import { storeToRefs } from "pinia";
+
 const personsListStore = useStore();
-const personsList = personsListStore.personsList;
+const { personsList } = storeToRefs(personsListStore)
 </script>
 
 <template>
@@ -18,7 +20,6 @@ li {
   padding: 8px;
   border-radius: 4px;
   color: black;
-  list-style: none;
   margin-bottom: 16px;
 }
 </style>

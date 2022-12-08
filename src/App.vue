@@ -1,31 +1,42 @@
 <script setup>
+import AppHeading from "./components/AppHeading.vue";
+import AppNav from "./components/AppNav.vue";
 import InputButton from "./components/InputButton.vue";
 import PersonsList from "./components/PersonsList.vue";
 </script>
 
 <template>
   <div class="top">
-    <h1>流行人</h1>
-    <p>現在誰が流行っているか一目で分かるアプリです。</p>
-    <p>自分の中で話題になっている人を投稿してみよう！</p>
-    <br />
-    <InputButton />
-  </div>
-  <div class="container">
-    <PersonsList />
+    <AppNav />
+    <div class="side">
+      <div class="side-top">
+        <AppHeading />
+        <InputButton />
+      </div>
+      <div class="side-bottom">
+        <PersonsList />
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .top {
-  height: 30vh;
+  display: flex;
+  min-height: 100vh;
+}
+.side {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 2%;
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+
+.side-top {
+  flex: 0.6;
+  text-align: center;
+}
+.side-bottom {
+  flex: 1.4;
 }
 </style>
