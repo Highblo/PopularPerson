@@ -1,6 +1,7 @@
 <script setup>
 import AppHeading from "./components/AppHeading.vue";
 import AppNav from "./components/AppNav.vue";
+import AppRanks from "./components/AppRanks.vue";
 import InputButton from "./components/InputButton.vue";
 import PersonsList from "./components/PersonsList.vue";
 </script>
@@ -14,6 +15,7 @@ import PersonsList from "./components/PersonsList.vue";
         <InputButton />
       </div>
       <div class="side-bottom">
+        <AppRanks />
         <PersonsList />
       </div>
     </div>
