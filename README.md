@@ -1,7 +1,7 @@
-# アプリケーション名
+## アプリケーション名
 
 
-**PopularPerson(開発中)**
+### PopularPerson(開発中)
 
 
 ## アプリケーション概要
@@ -55,4 +55,4 @@
 ## 画像
 
 
-![Alt text](../../../../C:/Users/nyaa-/vue/public/images/PopularPerson.png)
+![Alt text](public/images/PopularPerson.png)
