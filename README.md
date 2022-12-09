@@ -1,29 +1,44 @@
-# vue
+# アプリケーション名
 
-This template should help get you started developing with Vue 3 in Vite.
+PopularPerson(開発中)
 
-## Recommended IDE Setup
+# アプリケーション概要
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+自分の中で話題になっている人物を投票するアプリです。
+投票数に応じてランキング化されるので、一目で人気な人物(PopularPerson)が分かります。
 
-## Customize configuration
+# 利用方法
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+1.自分の中で話題になっている人物のカテゴリを選択して投票欄に名前を記入して投票するだけ！
 
-## Project Setup
+# 課題解決
 
-```sh
-npm install
-```
+現在人気な人物を一目で知りたいという問題を解決したい。
 
-### Compile and Hot-Reload for Development
+# 要件定義
 
-```sh
-npm run dev
-```
+### 目的
 
-### Compile and Minify for Production
+・インフルエンサーが普及している今の時代で、誰が人気なのかリアルな数字で知りたい。
 
-```sh
-npm run build
-```
+### 概要
+
+1.好きな人物を入力する。
+2.入力されたデータをDBに保存する。
+3.DBから今までのデータを取得して投票数に応じてランキング化し、レンダリングする。
+
+### 使用技術
+
+・Vue.js 3
+・Farebase
+・Pinia
+・axios
+
+# 追加していく機能
+
+・Firebaseを使ったDBへの保存、データの取得
+・Vue-routerを使ったカテゴリのルーティング
+
+# 画像
+
+![Alt text](../OneDrive/%E7%94%BB%E5%83%8F/Screenshots/PopularPerson.png)

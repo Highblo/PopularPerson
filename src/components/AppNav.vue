@@ -1,5 +1,4 @@
-<script setup>
-</script>
+<script setup></script>
 
 <template>
   <nav>
@@ -9,9 +8,15 @@
       <li>俳優</li>
       <li>アーティスト</li>
       <hr />
-      <li class="youtube"><span>Youtube</span></li>
-      <li class="twitter"><span>Twitter</span></li>
-      <li class="github"><span>Github</span></li>
+      <li class="youtube">
+        <a href="#"> Youtube </a>
+      </li>
+      <li class="twitter">
+        <a href="https://twitter.com/harufront_515"> Twitter </a>
+      </li>
+      <li class="github">
+        <a href="https://github.com/Highblo"> Github </a>
+      </li>
       <hr />
     </ul>
   </nav>
@@ -38,7 +43,7 @@ li {
   color: #fff;
   border-radius: 10px;
 }
-li:not(.twitter, .github):hover {
+li:not(.youtube, .twitter, .github):hover {
   background-color: #444;
 }
 
@@ -46,8 +51,21 @@ hr {
   margin: 16px 0;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.youtube {
+  background: linear-gradient(90deg, white, #ff0000);
+  position: relative;
+  transition: all 0.3s ease-out;
+}
 .twitter {
-  background: linear-gradient(90deg, rgb(251, 252, 252), #1DA1F2);
+  background: linear-gradient(90deg, rgb(251, 252, 252), #1da1f2);
   margin: 16px 0;
   position: relative;
   transition: all 0.3s ease-out;
@@ -57,27 +75,20 @@ hr {
   position: relative;
   transition: all 0.3s ease-out;
 }
-.youtube {
-  background: linear-gradient(90deg, white, #FF0000);
-  position: relative;
-  transition: all 0.3s ease-out;
-}
 
-.twitter:hover {
-  color: #1DA1F2;
+.youtube:hover a {
+  color: #ff0000;
 }
-.github:hover {
+.twitter:hover a {
+  color: #1da1f2;
+}
+.github:hover a {
   color: #000;
 }
-.youtube:hover {
-  color: #FF0000;
-}
 
-.twitter span, .github span, .youtube span {
-  position: relative;
-}
-
-.twitter::before, .github::before, .youtube::before {
+.twitter::before,
+.github::before,
+.youtube::before {
   content: "";
   position: absolute;
   top: 0;
@@ -88,16 +99,18 @@ hr {
   transition: all 0.3s ease-out;
 }
 .twitter::before {
-  background: linear-gradient(90deg, #1DA1F2, rgb(251, 252, 252));
+  background: linear-gradient(90deg, #1da1f2, rgb(251, 252, 252));
 }
 .github::before {
   background: linear-gradient(90deg, black, white);
 }
 .youtube::before {
-  background: linear-gradient(90deg, #FF0000, white);
+  background: linear-gradient(90deg, #ff0000, white);
 }
 
-.twitter:hover::before, .github:hover::before, .youtube:hover::before {
+.twitter:hover::before,
+.github:hover::before,
+.youtube:hover::before {
   opacity: 0;
 }
 </style>
