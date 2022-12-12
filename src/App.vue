@@ -13,6 +13,7 @@ import PersonsList from "./components/PersonsList.vue";
       <div class="side-top">
         <AppHeading />
         <InputButton />
+        <hr>
       </div>
       <div class="side-bottom">
         <AppRanks />
@@ -33,7 +34,9 @@ import PersonsList from "./components/PersonsList.vue";
   flex-direction: column;
   padding: 2%;
 }
-
+hr {
+  margin: 2rem;
+}
 .side-top {
   flex: 0.6;
   text-align: center;
