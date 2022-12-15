@@ -1,6 +1,6 @@
 <script setup>
-import { useStore } from "../store/personsList";
 import { storeToRefs } from "pinia";
+import { useStore } from "../store/personsList";
 
 const personsListStore = useStore();
 const { personsList } = storeToRefs(personsListStore);

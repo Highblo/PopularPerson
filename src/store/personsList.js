@@ -9,7 +9,7 @@ export const useStore = defineStore("personsListStore", {
     imageUrl: "",
   }),
   actions: {
-    getData(pushPersonInfo) {
+    getData() {
       const url =
         "https://api.bing.microsoft.com/v7.0/search?" +
         "count=10&responseFilter=images" +
@@ -21,7 +21,7 @@ export const useStore = defineStore("personsListStore", {
       };
       axios.get(url, option).then((res) => {
         this.imageUrl = res.data.images.value[0].contentUrl;
-        pushPersonInfo();
+        this.pushPersonInfo();
       });
     },
     addPopularPerson() {
@@ -30,10 +30,10 @@ export const useStore = defineStore("personsListStore", {
       const index = res.indexOf(this.popularPerson);
       if (index >= 0) {
         this.personsList[index].count++;
+        this.popularPerson = "";
       } else {
-        this.getData(this.pushPersonInfo);
+        this.getData();
       }
-      this.popularPerson = "";
     },
     pushPersonInfo() {
       const personInfo = {
@@ -42,6 +42,7 @@ export const useStore = defineStore("personsListStore", {
         image: this.imageUrl,
       };
       this.personsList.push(personInfo);
+      this.popularPerson = "";
     },
   },
 });
