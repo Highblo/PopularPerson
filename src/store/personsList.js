@@ -1,15 +1,17 @@
 import axios from "axios";
 import { defineStore } from "pinia";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 export const useStore = defineStore("personsListStore", {
   state: () => ({
-    personsList: [],
+    personsList: null,
     popularPerson: "",
     count: 1,
     imageUrl: "",
   }),
   actions: {
-    getData() {
+    getImage() {
       const url =
         "https://api.bing.microsoft.com/v7.0/search?" +
         "count=10&responseFilter=images" +
@@ -21,7 +23,7 @@ export const useStore = defineStore("personsListStore", {
       };
       axios.get(url, option).then((res) => {
         this.imageUrl = res.data.images.value[0].contentUrl;
-        this.pushPersonInfo();
+        this.addDb();
       });
     },
     addPopularPerson() {
@@ -32,16 +34,15 @@ export const useStore = defineStore("personsListStore", {
         this.personsList[index].count++;
         this.popularPerson = "";
       } else {
-        this.getData();
+        this.getImage();
       }
     },
-    pushPersonInfo() {
-      const personInfo = {
+    addDb() {
+      addDoc(collection(db, "users"), {
         person: this.popularPerson,
         count: this.count,
         image: this.imageUrl,
-      };
-      this.personsList.push(personInfo);
+      });
       this.popularPerson = "";
     },
   },

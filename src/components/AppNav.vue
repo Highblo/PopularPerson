@@ -4,23 +4,25 @@
 
 <template>
   <nav>
-    <h1 class="heading">PopularPerson</h1>
-    <ul>
-      <li>女優</li>
-      <li>俳優</li>
-      <li>アーティスト</li>
-      <hr />
-      <li class="youtube">
-        <a href="#"> Youtube </a>
-      </li>
-      <li class="twitter">
-        <a href="https://twitter.com/harufront_515"> Twitter </a>
-      </li>
-      <li class="github">
-        <a href="https://github.com/Highblo"> Github </a>
-      </li>
-      <hr />
-    </ul>
+    <div class="container">
+      <h1 class="heading">PopularPerson</h1>
+      <ul>
+        <li>女優</li>
+        <li>俳優</li>
+        <li>アーティスト</li>
+        <hr />
+        <li class="youtube">
+          <a href="#"> Youtube </a>
+        </li>
+        <li class="twitter">
+          <a href="https://twitter.com/harufront_515"> Twitter </a>
+        </li>
+        <li class="github">
+          <a href="https://github.com/Highblo"> Github </a>
+        </li>
+        <hr />
+      </ul>
+    </div>
   </nav>
 </template>
 
@@ -29,6 +31,11 @@ nav {
   background-color: #333;
   width: 250px;
   padding: 24px;
+}
+.container {
+  position: sticky;
+  top: 24px;
+  left: 0;
 }
 .heading {
   color: #acb6e5;

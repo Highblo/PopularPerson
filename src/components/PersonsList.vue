@@ -15,10 +15,13 @@ const { personsList } = storeToRefs(personsListStore);
         </div>
       </div>
       <div class="info">
-        <p>名前: <span class="name">{{ personInfo.person }}</span></p>
-        <p>投票数: <span class="name">{{ personInfo.count }}</span></p>
+        <p>名前：<span class="strong">{{ personInfo.person }}</span></p>
+        <p>投票数：<span class="strong">{{ personInfo.count }}</span></p>
         <hr>
-        <v-btn @click="personInfo.count++" color="secondary">投票する</v-btn>
+        <div class="btnflex">
+          <v-btn @click="personInfo.count++" color="secondary">投票する</v-btn>
+          <v-btn color="blue">コメントを書く</v-btn>
+        </div>
       </div>
     </li>
   </ul>
@@ -26,11 +29,12 @@ const { personsList } = storeToRefs(personsListStore);
 
 <style scoped>
 ul {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  padding: 3rem;
 }
 li {
-  width: 25%;
   padding: 16px;
   box-shadow: 0 0 6px #666;
   border-radius: 6px;
@@ -44,9 +48,13 @@ img {
 .info {
   padding: 8px;
 }
-.name {
+.strong {
   font-size: 1.2rem;
   font-weight: bold;
+}
+.btnflex {
+  display: flex;
+  justify-content: space-between;
 }
 hr {
   margin: 12px 0;
